@@ -1,0 +1,114 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+:root {
+  --clr-red: hsl(14, 86%, 42%);
+  --clr-green: hsl(159, 69%, 38%);
+  --clr-rose-50: hsl(20, 50%, 98%);
+  --clr-rose-100: hsl(13, 31%, 94%);
+  --clr-rose-300: hsl(14, 25%, 72%);
+  --clr-rose-400: hsl(7, 20%, 60%);
+  --clr-rose-500: hsl(12, 20%, 44%);
+  --clr-rose-900: hsl(14, 65%, 9%);
+}
+
+body {
+  min-height: 100svh;
+  background-color: var(--clr-rose-100);
+  padding-block: 40px;
+}
+button {
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+.page-container {
+  max-width: 1200px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: start;
+  gap: 40px;
+}
+.page-title {
+  font-size: 2rem;
+  color: var(--clr-rose-900);
+  margin-bottom: 20px;
+}
+.cart-container {
+  background-color: var(--clr-rose-50);
+  padding: 20px;
+  border-radius: 10px;
+  position: sticky;
+  top: 0px;
+}
+
+.cart-container-title {
+  font-size: 1.4rem;
+  color: var(--clr-red);
+  margin-bottom: 20px;
+}
+
+.empty-cart-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.empty-cart-desc {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--clr-rose-500);
+}
+.product-list-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.product-list-container img {
+  max-width: 100%;
+}
+.product-img {
+  border-radius: 20px;
+  overflow: hidden;
+}
+.add-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-rose-50);
+  padding: 10px 30px;
+  border-radius: 99999px;
+  border: 1px solid var(--clr-rose-900);
+  margin-inline: auto;
+  margin-top: -20px;
+  z-index: 2000;
+  position: relative;
+  color: var(--clr-rose-900);
+  font-weight: 600;
+  gap: 5px;
+}
+.product-category {
+  font-size: 0.9rem;
+  color: var(--clr-rose-400);
+  margin-bottom: 3px;
+}
+.product-name {
+  color: var(--clr-rose-900);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+.product-price {
+  font-size: 1rem;
+  color: var(--clr-red);
+  font-weight: 600;
+}
