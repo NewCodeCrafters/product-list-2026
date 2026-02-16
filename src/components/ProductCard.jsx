@@ -1,6 +1,9 @@
 import React from "react";
+import { useCart } from "../context/cart-context";
 
-const ProductCard = ({ image, category, price, name }) => {
+const ProductCard = ({ image, category, price, name, id }) => {
+  const { cart, addToCart } = useCart();
+  const cartItem = cart.find((cartItem) => cartItem.id === id);
   return (
     <article className="product-card">
       <figure className="product-img">
@@ -10,10 +13,20 @@ const ProductCard = ({ image, category, price, name }) => {
           <img src={image.mobile} alt={name} />
         </picture>
       </figure>
-      <button type="button" className="add-cart-btn">
-        <img src="/images/icon-add-to-cart.svg" alt="" />
-        <span>Add to Cart</span>
-      </button>
+      {cartItem ? (
+        <></>
+      ) : (
+        <button
+          type="button"
+          className="add-cart-btn"
+          onClick={() =>
+            addToCart({ name, id, image, category, price, quantity: 1 })
+          }
+        >
+          <img src="/images/icon-add-to-cart.svg" alt="" />
+          <span>Add to Cart</span>
+        </button>
+      )}
       <p className="product-category">{category}</p>
       <p className="product-name">{name}</p>
       <p className="product-price">${price.toFixed(2)}</p>
